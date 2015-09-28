@@ -1,0 +1,5 @@
+site_name: Invoca
+pages:
+  Home: index.md
+  TestSub1: test1.md
+  TestSub2: test2.md
