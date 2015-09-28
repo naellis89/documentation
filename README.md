@@ -1,2 +1,2 @@
 # documentation
-The structure file is mkdocs.yml and all documents live in docs/
+Most important information is in index.md
