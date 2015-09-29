@@ -1,0 +1,7 @@
+site_name: invoca
+pages:
+  - 'Basics': 'basics.md'
+  - 'API Documentation': 'api_documentation.md'
+  - 'Web Integration': 'web_integration.md'
+theme: readthedocs
+repo_url: https://github.com/naellis89/documentation
