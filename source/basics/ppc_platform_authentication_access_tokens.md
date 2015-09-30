@@ -65,7 +65,7 @@ Response:
 </code></pre>
 {: .prettyprint .theme-github}
 
-Create access token for “sy@young.com” user in affiliate id 976:
+Create access token for "sy@young.com" user in affiliate id 976:
 
 POST
 

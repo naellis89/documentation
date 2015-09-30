@@ -1,33 +1,33 @@
 Design Principles
 =================
 
-###REST
+### REST
 <hr>
 
 All interfaces use [REST](http://en.wikipedia.org/wiki/REST). This makes them easy to predict as they use HTTP and its existing
 verbs to Create, Read, Update, and Delete objects. Any language that supports HTTP can
 access these interfaces. Create and Update are idempotent operations.
 
-|---
-|Action | HTTP Verb | Notes
-|---
-|Create | POST | Object is created. If it already exists, it is updated.
-|Read | GET | Object is read.
-|Update | PUT | Object is created. If it already exists, it is updated.
-|Delete | DELETE | Object is deleted. If the object has already been deleted, does nothing.
+<table>
+<th>Action</th>   <th>HTTP Verb</th>   <th>Notes</th>
+<tr><td>Create</td><td>POST  </td><td>Object is created. If it already exists, it is updated.</td></tr>
+<tr><td>Read  </td><td>GET   </td><td>Object is read.</td></tr>
+<tr><td>Update</td><td>PUT   </td><td>Object is created. If it already exists, it is updated.</td></tr>
+<tr><td>Delete</td><td>DELETE</td><td>Object is deleted. If the object has already been deleted, does nothing.</td></tr>
+</table>
 {:.table-striped}
 
 <br>
 
-###Status Codes
+### Status Codes
 <hr>
 
 HTTP Status codes are used to indicate success or failure. The set of status codes returned
 by the Network Integration API are:
 
-|---
+|---|---|
 |Status Code | Meaning
-|---
+|---|---|
 |200, 201 | Success
 |401 | Failure. Access is not authorized.
 |403 | Failure. Request arguments are invalid.
@@ -38,7 +38,7 @@ by the Network Integration API are:
 \* See the section on Error Handling for greater detail on response bodies for failure codes.
 
 
-###Security
+### Security
 <hr>
 
 HTTPS is required for all API requests.
@@ -47,18 +47,18 @@ Authentication is performed using one of several approaches.
 
 The preferred approach is to use Invoca API tokens, which are created and managed on the Manage API Credentials page of the platform.
 
-Some API endpoints will accept HTTP(S) Basic Authentication, which authenticates using a username and password in the request header.  
+Some API endpoints will accept HTTP(S) Basic Authentication, which authenticates using a username and password in the request header.
 
 Additionally, session login authentication is sufficient as an alternative. This is so that you can
 test an API URL simply by logging in to the platform first as a Network Role of ‘Super’ (full access user) and then pasting the URL into the browser.
 
-###Using OAuth token to Access Invoca APIs
+### Using OAuth token to Access Invoca APIs
 <hr>
 
 Requests are authenticated using HTTPS basic authentication with an Invoca API Token, which can be created and managed on the Manage API Credentials page in the platform.
 <br><br>
 
-####Step by step guide using API token to access APIs
+### Step by step guide using API token to access APIs
 <hr>
 
 1. Obtain OAuth 2.0 credentials from the Manage API Credentials.
@@ -88,33 +88,33 @@ Example using Curl to make an API call with token-based authentication:
 
 
 
-###Idempotency
+### Idempotency
 <hr>
 
 Most interfaces are designed to be idempotent, meaning that it is harmless to call them
 more than once with the same parameters. Subsequent calls to an interface have no side effects,
 and return the same result.
 
-###Self‐Correction
+### Self‐Correction
 <hr>
 
 Most updates expect a complete copy of the object, making Update and Create
 interchangeable. This means that errors tend to be corrected over time. Campaign Terms
 are an exception to this due to their complexity (see Advertiser Campaigns for more).
 
-###Versioning
+### Versioning
 <hr>
 
 The API version is given as a date in the path.
 
-###Dedicated Subdomain
+### Dedicated Subdomain
 <hr>
 All APIs are accessed through the dedicated subdomain of invoca.net that is used for the
 network. For example, a network named "LeadTrust" might be assigned
 leadtrust.invoca.net. We recommend that, when making your API calls, you place your
 \<network_id> after the API version in the url.
 
-###Request Parameter Format & Response Body Format
+### Request Parameter Format & Response Body Format
 <hr>
 
 Previous versions of the API accepted form‐encoded style parameters in the request and used

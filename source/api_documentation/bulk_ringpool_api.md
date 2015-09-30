@@ -91,10 +91,10 @@ As another example, the following exception occurs when attempting to allocate a
 
 ~~~ json
 {
-    “errors”:
+    "errors":
     {
-        “invalid_data”:”Numbers are automatically allocated by the
-        PNAPI server”,”class”:”OnlyBulkNumberAllocationAllowed”
+        "invalid_data":"Numbers are automatically allocated by the PNAPI server",
+        "class”:”OnlyBulkNumberAllocationAllowed"
     }
 }
 ~~~

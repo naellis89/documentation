@@ -3,19 +3,19 @@ API Overview
 
 The platform provides the following APIs:
 
-[Transactions](/docs/rest/transactions) - provides read-only access to call transaction data.  
+[Transactions](transactions.html) - provides read-only access to call transaction data.
 
 [Network Integration](network_integration/index.html) -
-supports the replication and synchronization of advertiser, publisher and campaign data between partner platforms.  
+supports the replication and synchronization of advertiser, publisher and campaign data between partner platforms.
 
-[Conversion Reporting](/docs/rest/conversion-reporting) -
+[Conversion Reporting](conversion_reporting.html) -
 provides the ability to report completed order information (or other conversion events) from a server back into the platform.
 
-[RingPool](/docs/rest/ringpool) -
+[RingPool](ringpool.html) -
 allocates a dynamic, trackable promo phone number from a RingPool.
 
-[Bulk RingPool API](/docs/api-documentation/bulk-ringpool-api) -
-allocates a dynamic, trackable promo phone number from a RingPool (designed to handle a high volume of requests per second).  
+[Bulk RingPool API](bulk_ringpool_api.html) -
+allocates a dynamic, trackable promo phone number from a RingPool (designed to handle a high volume of requests per second).
 
 
 The following table identifies the APIs available by account type and role:

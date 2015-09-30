@@ -23,7 +23,7 @@ Conversion Report Message Format:
 
 Conversion Reporting sent via email must be in a CSV (comma-separated values) file format with the sale reporting parameters as the column headers and each sale transaction on a single row. Attach the CSV file to an empty message and send it to the Upload Email Address.
 
-Two example files are shown at the bottom of this article. Feel free to contact your Program Manager or [questions@invoca.com](mailto:questions@invoca.com) for a skeleton file that suits your needs. Removing un-used columns reduces mistakes, so trim the skeleton file to include only the parameters you need.  
+Two example files are shown at the bottom of this article. Feel free to contact your Program Manager or [questions@invoca.com](mailto:questions@invoca.com) for a skeleton file that suits your needs. Removing un-used columns reduces mistakes, so trim the skeleton file to include only the parameters you need.
 
 <h3>
 For Call Based Conversions

@@ -9,6 +9,10 @@ These are the more in depth API articles
    api_overview
    manage_api_credentials
    network_integration/index
-   converstion_reporting_pixel
-   converstion_reporting_email
+   conversion_reporting
+   conversion_reporting_pixel
+   conversion_reporting_email
+   transactions
+   ringpool
    bulk_ringpool_api
+   call_outcomes_api

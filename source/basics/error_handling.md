@@ -1,7 +1,7 @@
 Error Handling
 ==============
 
-###AdvertiserCampaign RingPools
+### AdvertiserCampaign RingPools
 <hr>
 
 Not found – 404:
@@ -19,7 +19,7 @@ gns/100/ring_pools/123.json`
 {: .prettyprint .theme-github}
 
 
-###Affiliate Campaign RingPools
+### Affiliate Campaign RingPools
 <hr>
 
 Not found – 404:
@@ -37,7 +37,7 @@ gns/100/affiliates/300/affiliate_campaigns/ring_pools/123.json`
 {: .prettyprint .theme-github}
 
 
-###Common RingPool errors:
+### Common RingPool errors:
 <hr>
 
 Validation failed – 403 – Body contains a json with validation errors for each field:
