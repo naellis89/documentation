@@ -102,6 +102,7 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 
 html_theme = 'default'
+html_style = 'css/custom.css'
 
 # Uncomment the following lines to build the docs locally using sphinx-build
 #import sphinx_rtd_theme
