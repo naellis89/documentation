@@ -1,2 +1,0 @@
-* Networking *
-some networky text

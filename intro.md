@@ -1,2 +1,0 @@
-* Intro page *
-some text
