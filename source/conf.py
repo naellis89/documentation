@@ -33,6 +33,9 @@ import os
 templates_path = ['_templates']
 
 # The suffix of source filenames.
+source_parsers = {
+      '.md': 'recommonmark.parser.CommonMarkParser',
+}
 source_suffix = ['.rst', '.md']
 
 # The encoding of source files.

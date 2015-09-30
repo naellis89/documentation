@@ -5,7 +5,7 @@ The platform provides the following APIs:
 
 [Transactions](/docs/rest/transactions) - provides read-only access to call transaction data.  
 
-[Network Integration](/docs/rest/network-integration) -
+[Network Integration](network_integration/index.html) -
 supports the replication and synchronization of advertiser, publisher and campaign data between partner platforms.  
 
 [Conversion Reporting](/docs/rest/conversion-reporting) -

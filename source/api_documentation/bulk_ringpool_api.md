@@ -1,4 +1,4 @@
-Bulk ringpool API
+Bulk Ringpool API
 =================
 
 Before using the Bulk RingPool API, contact [questions@invoca.com](mailto:questions@invoca.com) to enable the Bulk RingPool API feature. It is recommended that before you enable the feature on your production platform, testing occurs on a demo or test platform.
@@ -36,16 +36,15 @@ Individual responses and request IDs are returned in the same order as the reque
 Below is an example of the JSON request body:
 
 
-.. code-block:: javascript
-
-  {
-   "requests":[
-    {"api_suffix":"<RING_POOL_ID>/allocate_number.json?ring_pool_key=<RING_POOL_KEY>&m1=autos&m2=ford","request_id":"193C5F"},
-    {"api_suffix":"<RING_POOL_ID>/allocate_number.json?ring_pool_key=<RING_POOL_KEY>&m1=antiques","request_id":"58CD4F"},
-    {"api_suffix":"<RING_POOL_ID>/allocate_number.json?ring_pool_key=<RING_POOL_KEY>&m1=electronics","request_id":"E3901B"}
-   ]
-  }
-
+~~~ json
+{
+ "requests":[
+  {"api_suffix":"<RING_POOL_ID>/allocate_number.json?ring_pool_key=<RING_POOL_KEY>&m1=autos&m2=ford","request_id":"193C5F"},
+  {"api_suffix":"<RING_POOL_ID>/allocate_number.json?ring_pool_key=<RING_POOL_KEY>&m1=antiques","request_id":"58CD4F"},
+  {"api_suffix":"<RING_POOL_ID>/allocate_number.json?ring_pool_key=<RING_POOL_KEY>&m1=electronics","request_id":"E3901B"}
+ ]
+}
+~~~
 {: .prettyprint .theme-github}
 
 ### Response Body
@@ -55,16 +54,15 @@ The response format is in <b>JSON</b>.
 
 Below is an example response (whitespace added for clarity):
 
-.. code-block::  javascript
-
-  {
-   "responses":[
-    {"request_id":"193C5F","promo_number_formatted":"888-390-6665","promo_number":"8883906665","tracking_url":"http://ringrevenue.com/c/1/14-11-109?us=http%3A%2F%2Fwww2.ringrevenue.com.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8883906665%26PPCPN%3D8883906665"},
-    {"request_id":"58CD4F","promo_number_formatted":"877-455-1120","promo_number":"8774551120","tracking_url":"http://ringringrevenue.com/c/1/19-99-210?us=http%3A%2F%2Fwww2.ringrevenue.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8774551120%26PPCPN%3D8774551120"},
-    {"request_id":"E3901B","promo_number_formatted":"866-971-5703","promo_number":"8669715703","tracking_url":"http://ringringrevenue.com/c/1/38-240-19?us=http%3A%2F%2Fwww2.ringrevenue.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8669715703%26PPCPN%3D8669715703","overflow":true}
-   ]
-  }
-
+~~~ json
+ {
+ "responses":[
+  {"request_id":"193C5F","promo_number_formatted":"888-390-6665","promo_number":"8883906665","tracking_url":"http://ringrevenue.com/c/1/14-11-109?us=http%3A%2F%2Fwww2.ringrevenue.com.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8883906665%26PPCPN%3D8883906665"},
+  {"request_id":"58CD4F","promo_number_formatted":"877-455-1120","promo_number":"8774551120","tracking_url":"http://ringringrevenue.com/c/1/19-99-210?us=http%3A%2F%2Fwww2.ringrevenue.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8774551120%26PPCPN%3D8774551120"},
+  {"request_id":"E3901B","promo_number_formatted":"866-971-5703","promo_number":"8669715703","tracking_url":"http://ringringrevenue.com/c/1/38-240-19?us=http%3A%2F%2Fwww2.ringrevenue.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8669715703%26PPCPN%3D8669715703","overflow":true}
+ ]
+}
+~~~
 {: .prettyprint .theme-github}
 
 Note the last response above has `"overflow":true`.  This indicates that the number returned is the overflow number for that RingPool.  To simplify the normal case when the number is not overflow, the key-value pair is omitted when the value would be `false`.
@@ -76,32 +74,30 @@ Additionally, Bulk API responses return the total server processing (this does n
 
 The Bulk RingPool API clearly identifies errors when a request can not be processed. For example, when the parameters are incorrect, an error response will be returned for that row in the response as shown below:
 
-.. code-block:: javascript
+~~~ json
+{
+ "responses":[
+{"request_id":"193C5F","promo_number_formatted":"888-390-6665","promo_number":"8883906665","tracking_url":"http://ringrevenue.com/c/1/14-11-109?us=http%3A%2F%2Fwww2.ringrevenue.com.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8883906665%26PPCPN%3D8883906665"},
 
-    {
-     "responses":[
-    {"request_id":"193C5F","promo_number_formatted":"888-390-6665","promo_number":"8883906665","tracking_url":"http://ringrevenue.com/c/1/14-11-109?us=http%3A%2F%2Fwww2.ringrevenue.com.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8883906665%26PPCPN%3D8883906665"},
+{"request_id":"58CD4F","error_class":"InvalidKey","message":"API Key 'A329F4DC002168' is not valid for resource '1'"},
 
-    {"request_id":"58CD4F","error_class":"InvalidKey","message":"API Key 'A329F4DC002168' is not valid for resource '1'"},
-
-    {"request_id":"E3901B","promo_number_formatted":"866-971-5703","promo_number":"8669715703","tracking_url":"http://ringringrevenue.com/c/1/38-240-19?us=http%3A%2F%2Fwww2.ringrevenue.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8669715703%26PPCPN%3D8669715703"}
-    ]
-    }
-
+{"request_id":"E3901B","promo_number_formatted":"866-971-5703","promo_number":"8669715703","tracking_url":"http://ringringrevenue.com/c/1/38-240-19?us=http%3A%2F%2Fwww2.ringrevenue.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8669715703%26PPCPN%3D8669715703"}
+]
+}
+~~~
 {: .prettyprint .theme-github}
 
 As another example, the following exception occurs when attempting to allocate a number with the RingPool API against a RingPool that has been set up to use the Bulk RingPool API:
 
-.. code-block:: javascript
-
+~~~ json
+{
+    “errors”:
     {
-        “errors”:
-        {
-            “invalid_data”:”Numbers are automatically allocated by the
-            PNAPI server”,”class”:”OnlyBulkNumberAllocationAllowed”
-        }
+        “invalid_data”:”Numbers are automatically allocated by the
+        PNAPI server”,”class”:”OnlyBulkNumberAllocationAllowed”
     }
-
+}
+~~~
 {: .prettyprint .theme-github}
 
 
