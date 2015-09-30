@@ -36,7 +36,8 @@ Individual responses and request IDs are returned in the same order as the reque
 Below is an example of the JSON request body:
 
 
-.. code-block:: json
+.. code-block:: javascript
+
   {
    "requests":[
     {"api_suffix":"<RING_POOL_ID>/allocate_number.json?ring_pool_key=<RING_POOL_KEY>&m1=autos&m2=ford","request_id":"193C5F"},
@@ -54,7 +55,8 @@ The response format is in <b>JSON</b>.
 
 Below is an example response (whitespace added for clarity):
 
-.. code-block::  json
+.. code-block::  javascript
+
   {
    "responses":[
     {"request_id":"193C5F","promo_number_formatted":"888-390-6665","promo_number":"8883906665","tracking_url":"http://ringrevenue.com/c/1/14-11-109?us=http%3A%2F%2Fwww2.ringrevenue.com.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8883906665%26PPCPN%3D8883906665"},
@@ -74,7 +76,8 @@ Additionally, Bulk API responses return the total server processing (this does n
 
 The Bulk RingPool API clearly identifies errors when a request can not be processed. For example, when the parameters are incorrect, an error response will be returned for that row in the response as shown below:
 
-.. code-block:: json
+.. code-block:: javascript
+
     {
      "responses":[
     {"request_id":"193C5F","promo_number_formatted":"888-390-6665","promo_number":"8883906665","tracking_url":"http://ringrevenue.com/c/1/14-11-109?us=http%3A%2F%2Fwww2.ringrevenue.com.com%2Fdemo%2F8x8_staging.html%3Fsid%3D8883906665%26PPCPN%3D8883906665"},
@@ -89,7 +92,8 @@ The Bulk RingPool API clearly identifies errors when a request can not be proces
 
 As another example, the following exception occurs when attempting to allocate a number with the RingPool API against a RingPool that has been set up to use the Bulk RingPool API:
 
-.. code-block:: json
+.. code-block:: javascript
+
     {
         “errors”:
         {
