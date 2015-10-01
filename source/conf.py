@@ -101,8 +101,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 
-html_theme = 'default'
-html_style = 'css/custom.css'
+html_theme = 'classic'
 
 # Uncomment the following lines to build the docs locally using sphinx-build
 #import sphinx_rtd_theme
