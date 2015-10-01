@@ -103,6 +103,7 @@ pygments_style = 'sphinx'
 
 # Uncomment the following lines to build the docs locally using sphinx-build
 on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+html_theme = 'classic'
 
 if not on_rtd:  # only import and set the theme if we're building docs locally
   import sphinx_rtd_theme
