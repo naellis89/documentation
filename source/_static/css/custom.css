@@ -1,3 +1,6 @@
+@import url("../pygments.css");
+@import url("../classic.css");
+
 th {
   background-color: green;
   color: white;
