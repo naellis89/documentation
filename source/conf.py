@@ -102,13 +102,9 @@ pygments_style = 'sphinx'
 # a list of builtin themes.
 
 # Uncomment the following lines to build the docs locally using sphinx-build
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-html_theme = 'classic'
-
-if not on_rtd:  # only import and set the theme if we're building docs locally
-  import sphinx_rtd_theme
-  html_theme = 'sphinx_rtd_theme'
-  html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+import sphinx_rtd_theme
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 html_style = 'css/custom.css'
 
