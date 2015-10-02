@@ -16,21 +16,17 @@ The format of the API URL is in (2):
 
 `https://invoca.net/api/2014-­01-­01/<network_id>/network/<email>/create_access_token.json`
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/<advertiser_id_from
-_network>/<email>/create_access_token.json`
+`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/<advertiser_id_from_network>/<email>/create_access_token.json`
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/<affiliate_id_from_n
-etwork>/<email>/create_access_token.json`
+`https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/<affiliate_id_from_network>/<email>/create_access_token.json`
 
 The success response is an JSON document with a root element of Response that contains a
 single AccessToken element whose content is the access token:
 
-|---
-|Response JSON Element | Value
-|---
-|AccessToken | The access token
-|---
-{:.table-striped}
+<table>
+<tr><th>Response JSON Element</th><th>Value</th></tr>
+<tr><td>AccessToken          </td><td>The access token</td></tr>
+</table>
 
 <br>
 
@@ -49,7 +45,6 @@ Response:
   "id": 1
 }
 </code></pre>
-{: .prettyprint .theme-github}
 
 Create access token for “sy@young.com” user in advertiser id 354:
 
@@ -63,7 +58,6 @@ Response:
   "id": 1
 }
 </code></pre>
-{: .prettyprint .theme-github}
 
 Create access token for "sy@young.com" user in affiliate id 976:
 
@@ -77,7 +71,6 @@ Response:
   "id": 1
 }
 </code></pre>
-{: .prettyprint .theme-github}
 
 <br>
 <h3>
@@ -95,18 +88,15 @@ When using the API, all authentication is by the network on behalf of the replic
 So in this case the PPC Platform redirects to a network authentication URL such as
 [http://www.network.com/loginwith](http://www.network.com/loginwith) with the following query parameters:
 
-|---
-|Query Parameter | Description
-|---
-|destination | The ultimate PPC Platform destination URL to redirect to once authentication has been established.
-|---
-|type | Either advertiseror affiliate, or empty if unknown.
-{:.table-striped}
+<table>
+<tr><th>Query Parameter</th><th>Description</th></tr>
+<tr><td>destination    </td><td>The ultimate PPC Platform destination URL to redirect to once authentication has been established.</td></tr>
+<tr><td>type           </td><td>Either advertiseror affiliate, or empty if unknown.</td></tr>
+</table>
 
 For example:
 
-`http://www.network.com/login?destination=
-http%3A%2F%2Finvoca.net%2Faffiliates%2F1&type=advertiser`
+`http://www.network.com/login?destination=http%3A%2F%2Finvoca.net%2Faffiliates%2F1&type=advertiser`
 
 The network authenticates the user either by using existing session credentials or by
 prompting for login credentials. It generates an access token using a server‐to‐server
@@ -114,8 +104,7 @@ POST:
 
 POST
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_acce
-ss_token.json`
+`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_access_token.json`
 
 The returned value is an access token, for example 9AC23B903F4. The network then
 appends this token to the destination URL and redirects there:

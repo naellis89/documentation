@@ -6,8 +6,7 @@ Error Handling
 
 Not found – 404:
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/1/advertiser_campai
-gns/100/ring_pools/123.json`
+`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/1/advertiser_campaigns/100/ring_pools/123.json`
 
 <pre><code>{
   "errors": {
@@ -16,7 +15,6 @@ gns/100/ring_pools/123.json`
   }
 }
 </code></pre>
-{: .prettyprint .theme-github}
 
 
 ### Affiliate Campaign RingPools
@@ -24,8 +22,7 @@ gns/100/ring_pools/123.json`
 
 Not found – 404:
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/1/advertiser_campai
-gns/100/affiliates/300/affiliate_campaigns/ring_pools/123.json`
+`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/1/advertiser_campaigns/100/affiliates/300/affiliate_campaigns/ring_pools/123.json`
 
 <pre><code>{
   "errors": {
@@ -34,7 +31,6 @@ gns/100/affiliates/300/affiliate_campaigns/ring_pools/123.json`
   }
 }
 </code></pre>
-{: .prettyprint .theme-github}
 
 
 ### Common RingPool errors:
@@ -56,7 +52,6 @@ Validation failed – 403 – Body contains a json with validation errors for ea
   }
 }
 </code></pre>
-{: .prettyprint .theme-github}
 
 
 Service error – 500 – Body contains a json Error with a unique handle (to use as a
@@ -69,4 +64,3 @@ cross‐reference with Invoca):
   }
 }
 </code></pre>
-{: .prettyprint .theme-github}

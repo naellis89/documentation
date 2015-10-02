@@ -37,7 +37,7 @@ code.docutils {
 .rst-content code {
   width: 80%;
   padding: 2px;
-  border: 1px solid #888;
+  border: 0px;
   background-color: #F5F5F5;
   font-size: .7em;
   color: #555555;
@@ -46,7 +46,11 @@ code.docutils {
   word-wrap: break-word;
   border-radius: 4px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-  overflow: auto;
+  white-space: pre-wrap;
+}
+
+pre {
+  background-color: #F5F5F5;
 }
 
 .pre {
