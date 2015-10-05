@@ -6,7 +6,7 @@ Advertiser Campaigns can be managed using the Network API. In addition to create
 
 Note that the `<advertiser_id_from_network>` and `<advertiser_campaign_id_from_network>` are the network’s id for those objects, not Invoca’s.
 
-`/api/2015-05-01/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
+`/api/@version/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
 
 We support passing back current_terms and future_terms on campaigns. The current properties of the campaign are reflected in current_terms. All changes to the campaign are staged in future_terms. Once the campaign goes live, future_terms transition over to current_terms.
 
@@ -99,7 +99,7 @@ Read all campaigns for Advertiser 2 id from network
 
 Endpoint:
 
-`https://invoca.net/api/2015-05-01/<network_id>/advertisers/2/advertiser_campaigns.json`
+`https://invoca.net/api/@version/<network_id>/advertisers/2/advertiser_campaigns.json`
 
 Response Body:
 An array of campaigns are returned.
@@ -114,7 +114,7 @@ GET `/advertiser_campaigns/<advertiser_campaign_id>`
 Read Campaign 100 for Advertiser 2
 
 Endpoint:
-`https://invoca.net/api/2015-05-01/<network_id>/advertisers/2/advertiser_campaigns/100.json`
+`https://invoca.net/api/@version/<network_id>/advertisers/2/advertiser_campaigns/100.json`
 
 Response Body:
 <pre><code>{
@@ -417,15 +417,15 @@ POST `/advertiser_campaigns/<advertiser_campaign_id>`
 Example POST to non‐existing Advertiser Campaign fJauFbSEGHKw8ADEGv under Advertiser cFUyYnFHyiYA42TrpM in the Demo Network.
 
 POST
-`https://demo.invoca.net/api/2015-05-01/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
+`https://demo.invoca.net/api/@version/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
 
 With an existing advertiser, the IVR tree may be updated independently of other attributes. Below is a curl command that only needs network API credentials, a network id and an advertiser id. This will create an advertiser campaign with id 445566. The campaign id may be changed freely.
 
 Endpoint:
-`https://demo.invoca.net/api/2015-05-01/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
+`https://demo.invoca.net/api/@version/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
 
 <pre><code>curl­ -XPOST­ -H "Content­Type: application/json"­ -u 'login:pass'
-'https://vanity.invoca.net/api/2015-05-01/advertisers/advertiser_id/advertiser_campaigns/445566.json' \
+'https://vanity.invoca.net/api/@version/advertisers/advertiser_id/advertiser_campaigns/445566.json' \
 -d '
 {
   "hours": {
@@ -506,7 +506,7 @@ Create Campaign fJauFbSEGHKw8ADEGv for Advertiser cFUyYnFHyiYA42TrpM on network 
 
 Endpoint:
 
-`https://invoca.net/api/2015-05-01/<network_id>/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
+`https://invoca.net/api/@version/<network_id>/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
 
 Request Body
 
