@@ -71,7 +71,11 @@ After you obtain a token, include it in the HTTP header of your request, as a UR
 
 Example using API token as URL parameter:
 
-`https://<vanity>.invoca.net/api/2015-05-01/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU`
+
+``https://<vanity>.invoca.net/api/xxxxxx/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU``
+`https://<vanity>.invoca.net/api/xxxxxx/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU`
+https://<vanity>.invoca.net/api/xxxxxx/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU
+xxxxxx
 
 Example using Curl to make an API call with token-based authentication:
 
