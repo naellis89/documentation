@@ -36,8 +36,7 @@ Create access token for “sy@young.com” network user:
 
 POST
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/network/sy%40young.com/create_access_token.json HTTP/1.1`
-
+    https://invoca.net/api/2014­-01-­01/<network_id>/network/sy%40young.com/create_access_token.json HTTP/1.1
 
 Response:
 <pre><code>{
@@ -50,7 +49,7 @@ Create access token for “sy@young.com” user in advertiser id 354:
 
 POST
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_access_token.json HTTP/1.1`
+    https://invoca.net/api/2014­-01-­01/<network_id>/advertisers/354/sy%40young.com/create_access_token.json HTTP/1.1
 
 Response:
 <pre><code>{
@@ -63,7 +62,7 @@ Create access token for "sy@young.com" user in affiliate id 976:
 
 POST
 
-`https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/976/sy%40young.com/create_access_token.json HTTP/1.1`
+    https://invoca.net/api/2014­-01-­01/<network_id>/affiliates/976/sy%40young.com/create_access_token.json HTTP/1.1
 
 Response:
 <pre><code>{
@@ -148,16 +147,16 @@ Here are some basic examples on how to use the API using CURL.
 
 Create
 
-`curl -v ­XPOST -H "Content­Type: application/json" -u '<username>:<password>’ 'https://www.invoca.net/api/2014­-01-­01/<network_id>/<url>' -d '<valid JSON>’`
+    curl -v ­XPOST -H "Content­Type: application/json" -u '<username>:<password>’ 'https://www.invoca.net/api/2014­-01-­01/<network_id>/<url>' -d '<valid JSON>’
 
 Read
 
-`curl -v -u '<username>:<password> 'https://www.invoca.net/api/2014­-01­-01/<network_id>/<url>'`
+    curl -v -u '<username>:<password> 'https://www.invoca.net/api/2014­-01­-01/<network_id>/<url>'
 
 Update
 
-`curl­ -v -XPUT -H "Content­Type: application/json" -u '<username>:<password> 'https://www.invoca.net/api/2014­-01-­01/<network_id>/<url>' -d '<valid JSON>’`
+    curl­ -v -XPUT -H "Content­Type: application/json" -u '<username>:<password> 'https://www.invoca.net/api/2014­-01-­01/<network_id>/<url>' -d '<valid JSON>’
 
 Delete
 
-`curl -v -XDELETE -H "Content­Type: application/json" -u '<username>:<password> 'https://www.invoca.net/api/2014­-01­-01/<network_id>/<url>' -d '<valid JSON>’`
+    curl -v -XDELETE -H "Content­Type: application/json" -u '<username>:<password> 'https://www.invoca.net/api/2014­-01­-01/<network_id>/<url>' -d '<valid JSON>’
