@@ -212,3 +212,7 @@ li.wy-breadcrumbs-aside {
 .document {
   color: #FFF;
 }
+
+div.section h1 {
+  padding: inherit;
+}
