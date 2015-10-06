@@ -15,54 +15,54 @@ You can set budgets on your campaign. There are two budget types, budget_cap_ale
 You are not allowed to delete campaigns.
 
 <table>
-<tr><th>Property</th><th>Type</th><th>Value</th></tr>
-<tr><td>name</td><td>string</td><td>Campaign name.</td></tr>
-<tr><td>campaign_type</td><td>string</td><td>2 Campaign Types Supported: “AffiliateEnabled” ‐ Advertiser Campaign that allows Affiliates to promote it. Includes Payin and Payouts for qualified Calls. “DirectOnly” ‐ Advertiser Campaign used for internal marketing. No ability to promote via Affiliates or setup Payin and Payouts for Calls.</td></tr>
-<tr><td>description</td><td>string</td><td>Campaign Description.</td></tr>
-<tr><td>url</td><td>string</td><td>Click URL Template.</td></tr>
-<tr><td>timezone</td><td>string</td><td>Supported Time Zones: “Pacific Time (US & Canada)”, “Mountain Time (US & Canada)”, “Central Time (US & Canada)”, “Eastern Time (US & Canada)”, “London”, “UTC”.</td></tr>
-<tr><td>operating_24_7</td><td>boolean</td><td></td></tr>
-<tr><td>affiliate_payout</td><td></td></tr>
-<tr><td>currency</td><td>string</td><td>USD, GBP, EUR.</td></tr>
-<tr><td>policies</td><td></td></tr>
-<tr><td>amount</td><td>decimal</td><td>Payout Amount.</td></tr>
-<tr><td>condition</td><td>string</td><td>Condition options depend on the following Campaign Setup items being in place: Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Connect Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Repeat, In Region (specified across multiple Regions), During Hours, Key Press, Is Mobile, Is Landline, Send SMS All may be grouped with logic operators (AND/OR/NOT).</td></tr>
-<tr><td>type</td><td>string</td><td>One of: Base, Bonus.</td></tr>
-<tr><td>advertiser_payin</td><td></td></tr>
-<tr><td>currency</td><td>string</td><td>Supported Currencies: ‐ USD, GBP, EUR.</td></tr>
-<tr><td>policies</td><td></td></tr>
-<tr><td>amount</td><td>integer</td><td>Advertiser Payin Amount.</td></tr>
-<tr><td>condition</td><td>string</td><td>Condition options depend on the following Campaign Setup items being in place: Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Connect Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Repeat, In Region (specified across multiple Regions), During Hours, Key Press, Is Mobile, Is Landline, Send SMS. All may be grouped with logic operators (AND/OR/NOT).</td></tr>
-<tr><td>type</td><td>string</td><td>One of: Base, Bonus.</td></tr>
-<tr><td>hours</td><td></td></tr>
-<tr><td>[day of week]_open (e.g. friday_open)</td><td>string</td><td>Open Hours. In seconds past midnight (e.g. 0 for midnight, 32400 for 9:00 AM).</td></tr>
-<tr><td>[day of week]_close (e.g. friday_close)</td><td>string</td><td>Closed Hours. In seconds past midnight (e.g. 0 for midnight, 75600 for 9:00 PM).</td></tr>
-<tr><td>[day of week]_closed (e.g. sunday_closed)</td><td>string</td><td>true, false, or null. Whether the business is closed that day of the week.</td></tr>
-<tr><td>named_regions</td><td></td></tr>
-<tr><td>name</td><td>string</td><td>Region Name.</td></tr>
-<tr><td>regions</td></tr>
-<tr><td>region_type</td><td>string</td><td>Region Type. Can be one of: Zone, City, State, Country.</td></tr>
-<tr><td>value</td><td>string</td><td>Region Value, e.g. “Sacramento, CA”, or just “CA”.</td></tr>
-<tr><td>ivr_tree</td><td>hash</td><td>See following Advertiser Campaign IVR Section.</td></tr>
-<tr><td>budget_activities</td><td></td><td>Only applicable for AffiliateEnabled campaigns.</td></tr>
-<tr><td>budget_cap_alert</td></tr>
-<tr><td>reset_period</td><td>string(required)</td><td>Budget will reset based on this entry. One of: Daily, Weekly, Monthly, Quarterly, Ongoing.</td></tr>
-<tr><td>starts_at</td><td>date (required)</td><td>Budget Start.</td></tr>
-<tr><td>budget_currency</td><td>string(required)</td><td>Budget Currency.</td></tr>
-<tr><td>time_zone</td><td>string (required)</td><td>Supported Time Zones: “Pacific Time (US & Canada)”, “Mountain Time (US & Canada)”, “Central Time (US & Canada)”, “Eastern Time (US & Canada)”, “London”, “UTC”.</td></tr>
-<tr><td>budget_amount</td><td>decimal (required)</td><td>Budget Amount.</td></tr>
-<tr><td>include_call_fees</td><td>boolean</td><td>True if you want call fees to be included in the budget.</td></tr>
-<tr><td>call_cap_alert</td></tr>
-<tr><td>reset_period</td><td>string (required)</td><td>Budget will reset based on this entry. One of: Daily, Weekly, Monthly, Quarterly, Ongoing.</td></tr>
-<tr><td>starts_at</td><td>date (required)</td><td>Call Cap Start.</td></tr>
-<tr><td>budget_currency</td><td>string (required)</td><td>Budget Currency.</td></tr>
-<tr><td>time_zone</td><td>string (required)</td><td>Supported Time Zones: “Pacific Time (US & Canada)”, “Mountain Time (US & Canada)”, “Central Time (US & Canada)”, “Eastern Time (US & Canada)”, “UTC”.</td></tr>
-<tr><td>budget_amount</td><td>decimal (required)</td><td>Budget Amount.</td></tr>
-<tr><td>auto_approve</td><td>string</td><td>One of: All, None, Approved_Affiliates Default: None This controls if affiliates are automatically approved when applying to the campaign.</td></tr>
-<tr><td>visibility</td><td>string</td><td>One of: All, None, Approved_Affiliates Default: All This controls the level of visibility publishers have when applying to campaigns.</td></tr>
-<tr><td>expiration_date</td><td>string</td><td>date string (ex. ‘2015‐01‐01’). Read only.</td></tr>
-<tr><td>default_creative_id_from_network</td><td>integer</td><td>Default Creative ID.</td></tr>
-<tr><td>max_promo_numbers</td><td>integer</td><td>Maximum Promo Numbers.</td></tr>
+  <tr><th>Property</th><th>Type</th><th>Value</th></tr>
+  <tr><td>name</td><td>string</td><td>Campaign name.</td></tr>
+  <tr><td>campaign_type</td><td>string</td><td>2 Campaign Types Supported: “AffiliateEnabled” ‐ Advertiser Campaign that allows Affiliates to promote it. Includes Payin and Payouts for qualified Calls. “DirectOnly” ‐ Advertiser Campaign used for internal marketing. No ability to promote via Affiliates or setup Payin and Payouts for Calls.</td></tr>
+  <tr><td>description</td><td>string</td><td>Campaign Description.</td></tr>
+  <tr><td>url</td><td>string</td><td>Click URL Template.</td></tr>
+  <tr><td>timezone</td><td>string</td><td>Supported Time Zones: “Pacific Time (US & Canada)”, “Mountain Time (US & Canada)”, “Central Time (US & Canada)”, “Eastern Time (US & Canada)”, “London”, “UTC”.</td></tr>
+  <tr><td>operating_24_7</td><td>boolean</td><td></td></tr>
+  <tr><td>affiliate_payout</td><td></td><td></td></tr>
+  <tr><td>currency</td><td>string</td><td>USD, GBP, EUR.</td></tr>
+  <tr><td>policies</td><td></td><td></td></tr>
+  <tr><td>amount</td><td>decimal</td><td>Payout Amount.</td></tr>
+  <tr><td>condition</td><td>string</td><td>Condition options depend on the following Campaign Setup items being in place: Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Connect Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Repeat, In Region (specified across multiple Regions), During Hours, Key Press, Is Mobile, Is Landline, Send SMS All may be grouped with logic operators (AND/OR/NOT).</td></tr>
+  <tr><td>type</td><td>string</td><td>One of: Base, Bonus.</td></tr>
+  <tr><td>advertiser_payin</td><td></td><td></td></tr>
+  <tr><td>currency</td><td>string</td><td>Supported Currencies: ‐ USD, GBP, EUR.</td></tr>
+  <tr><td>policies</td><td></td><td></td></tr>
+  <tr><td>amount</td><td>integer</td><td>Advertiser Payin Amount.</td></tr>
+  <tr><td>condition</td><td>string</td><td>Condition options depend on the following Campaign Setup items being in place: Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Connect Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Repeat, In Region (specified across multiple Regions), During Hours, Key Press, Is Mobile, Is Landline, Send SMS. All may be grouped with logic operators (AND/OR/NOT).</td></tr>
+  <tr><td>type</td><td>string</td><td>One of: Base, Bonus.</td></tr>
+  <tr><td>hours</td><td></td><td></td></tr>
+  <tr><td>[day of week]\_open (e.g. friday_open)</td><td>string</td><td>Open Hours. In seconds past midnight (e.g. 0 for midnight, 32400 for 9:00 AM).</td></tr>
+  <tr><td>[day of week]\_close (e.g. friday_close)</td><td>string</td><td>Closed Hours. In seconds past midnight (e.g. 0 for midnight, 75600 for 9:00 PM).</td></tr>
+  <tr><td>[day of week]\_closed (e.g. sunday_closed)</td><td>string</td><td>true, false, or null. Whether the business is closed that day of the week.</td></tr>
+  <tr><td>named_regions</td><td></td><td></td></tr>
+  <tr><td>name</td><td>string</td><td>Region Name.</td></tr>
+  <tr><td>regions</td><td></td><td></td></tr>
+  <tr><td>region_type</td><td>string</td><td>Region Type. Can be one of: Zone, City, State, Country.</td></tr>
+  <tr><td>value</td><td>string</td><td>Region Value, e.g. “Sacramento, CA”, or just “CA”.</td></tr>
+  <tr><td>ivr_tree</td><td>hash</td><td>See following Advertiser Campaign IVR Section.</td></tr>
+  <tr><td>budget_activities</td><td></td><td>Only applicable for AffiliateEnabled campaigns.</td></tr>
+  <tr><td>budget_cap_alert</td><td></td><td></td></tr>
+  <tr><td>reset_period</td><td>string(required)</td><td>Budget will reset based on this entry. One of: Daily, Weekly, Monthly, Quarterly, Ongoing.</td></tr>
+  <tr><td>starts_at</td><td>date (required)</td><td>Budget Start.</td></tr>
+  <tr><td>budget_currency</td><td>string(required)</td><td>Budget Currency.</td></tr>
+  <tr><td>time_zone</td><td>string (required)</td><td>Supported Time Zones: “Pacific Time (US & Canada)”, “Mountain Time (US & Canada)”, “Central Time (US & Canada)”, “Eastern Time (US & Canada)”, “London”, “UTC”.</td></tr>
+  <tr><td>budget_amount</td><td>decimal (required)</td><td>Budget Amount.</td></tr>
+  <tr><td>include_call_fees</td><td>boolean</td><td>True if you want call fees to be included in the budget.</td></tr>
+  <tr><td>call_cap_alert</td><td></td><td></td></tr>
+  <tr><td>reset_period</td><td>string (required)</td><td>Budget will reset based on this entry. One of: Daily, Weekly, Monthly, Quarterly, Ongoing.</td></tr>
+  <tr><td>starts_at</td><td>date (required)</td><td>Call Cap Start.</td></tr>
+  <tr><td>budget_currency</td><td>string (required)</td><td>Budget Currency.</td></tr>
+  <tr><td>time_zone</td><td>string (required)</td><td>Supported Time Zones: “Pacific Time (US & Canada)”, “Mountain Time (US & Canada)”, “Central Time (US & Canada)”, “Eastern Time (US & Canada)”, “UTC”.</td></tr>
+  <tr><td>budget_amount</td><td>decimal (required)</td><td>Budget Amount.</td></tr>
+  <tr><td>auto_approve</td><td>string</td><td>One of: All, None, Approved_Affiliates Default: None This controls if affiliates are automatically approved when applying to the campaign.</td></tr>
+  <tr><td>visibility</td><td>string</td><td>One of: All, None, Approved_Affiliates Default: All This controls the level of visibility publishers have when applying to campaigns.</td></tr>
+  <tr><td>expiration_date</td><td>string</td><td>date string (ex. ‘2015‐01‐01’). Read only.</td></tr>
+  <tr><td>default_creative_id_from_network</td><td>integer</td><td>Default Creative ID.</td></tr>
+  <tr><td>max_promo_numbers</td><td>integer</td><td>Maximum Promo Numbers.</td></tr>
 </table>
 
 ### Advertiser Campaign IVRs
@@ -74,18 +74,18 @@ Node Parameters and Usage
 * => required parameter
 
 <table>
-<tr><th>Node Type</th><th>Parameters</th><th>Usage</th></tr>
-<tr><td>Menu</td><td>\*prompt</td><td>Allows the caller to select from up to 9 choices (e.g. choosing a department, selecting a language, etc).</td></tr>
-<tr><td>Connect</td><td>prompt   </td></tr>
-<tr><td>&nbsp;</td><td>\*destination_phone_number</td><td>Forwards the call to a selected phone number after optionally reading a prompt.</td></tr>
-<tr><td>&nbsp;</td><td>\*destination_country_code</td><td>&nbsp;</td></tr>
-<tr><td>EndCall</td><td>prompt</td><td>Ends the call after optionally reading a prompt.</td></tr>
-<tr><td>SmsPromo</td><td>\*prompt</td><td>Provide the option for a user to receive a text message with a special promotion.</td></tr>
-<tr><td>&nbsp;</td><td>\*sms_promo_copy</td><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td><td>sms_promo_delay</td><td>&nbsp;</td></tr>
-<tr><td>&nbsp;</td><td>sms_promo_sender</td><td>&nbsp;</td></tr>
-<tr><td>Condition</td><td>\*condition</td><td>If/else option for a call based on the qualities of the call/caller.</td></tr>
-<tr><td>VerifyLocation</td><td>prompt</td><td>Prompt the caller to verify the guessed location or confirm through input. Useful if geographical data is important or useful in a condition node.</td></tr>
+  <tr><th>Node Type</th><th>Parameters</th><th>Usage</th></tr>
+  <tr><td>Menu</td><td>\*prompt</td><td>Allows the caller to select from up to 9 choices (e.g. choosing a department, selecting a language, etc).</td></tr>
+  <tr><td>Connect</td><td>prompt</td><td></td></tr>
+  <tr><td>&nbsp;</td><td>\*destination_phone_number</td><td>Forwards the call to a selected phone number after optionally reading a prompt.</td></tr>
+  <tr><td>&nbsp;</td><td>\*destination_country_code</td><td>&nbsp;</td></tr>
+  <tr><td>EndCall</td><td>prompt</td><td>Ends the call after optionally reading a prompt.</td></tr>
+  <tr><td>SmsPromo</td><td>\*prompt</td><td>Provide the option for a user to receive a text message with a special promotion.</td></tr>
+  <tr><td>&nbsp;</td><td>\*sms_promo_copy</td><td>&nbsp;</td></tr>
+  <tr><td>&nbsp;</td><td>sms_promo_delay</td><td>&nbsp;</td></tr>
+  <tr><td>&nbsp;</td><td>sms_promo_sender</td><td>&nbsp;</td></tr>
+  <tr><td>Condition</td><td>\*condition</td><td>If/else option for a call based on the qualities of the call/caller.</td></tr>
+  <tr><td>VerifyLocation</td><td>prompt</td><td>Prompt the caller to verify the guessed location or confirm through input. Useful if geographical data is important or useful in a condition node.</td></tr>
 </table>
 
 Node Details

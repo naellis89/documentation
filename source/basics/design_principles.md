@@ -9,11 +9,11 @@ verbs to Create, Read, Update, and Delete objects. Any language that supports HT
 access these interfaces. Create and Update are idempotent operations.
 
 <table>
-<tr><th>Action</th>   <th>HTTP Verb</th>   <th>Notes</th></tr>
-<tr><td>Create</td><td>POST  </td><td>Object is created. If it already exists, it is updated.</td></tr>
-<tr><td>Read  </td><td>GET   </td><td>Object is read.</td></tr>
-<tr><td>Update</td><td>PUT   </td><td>Object is created. If it already exists, it is updated.</td></tr>
-<tr><td>Delete</td><td>DELETE</td><td>Object is deleted. If the object has already been deleted, does nothing.</td></tr>
+  <tr><th>Action</th>   <th>HTTP Verb</th>   <th>Notes</th></tr>
+  <tr><td>Create</td><td>POST  </td><td>Object is created. If it already exists, it is updated.</td></tr>
+  <tr><td>Read  </td><td>GET   </td><td>Object is read.</td></tr>
+  <tr><td>Update</td><td>PUT   </td><td>Object is created. If it already exists, it is updated.</td></tr>
+  <tr><td>Delete</td><td>DELETE</td><td>Object is deleted. If the object has already been deleted, does nothing.</td></tr>
 </table>
 
 <br>
@@ -25,12 +25,12 @@ HTTP Status codes are used to indicate success or failure. The set of status cod
 by the Network Integration API are:
 
 <table>
-<tr><th>Status Code</th><th>Meaning</th></tr>
-<tr><td>200, 201   </td><td>Success</td></tr>
-<tr><td>401        </td><td>Failure. Access is not authorized.</td></tr>
-<tr><td>403        </td><td>Failure. Request arguments are invalid.</td></tr>
-<tr><td>404        </td><td>Failure. The resource was not found.</td></tr>
-<tr><td>500        </td><td>Failure. Internal Service Error.</td></tr>
+  <tr><th>Status Code</th><th>Meaning</th></tr>
+  <tr><td>200, 201   </td><td>Success</td></tr>
+  <tr><td>401        </td><td>Failure. Access is not authorized.</td></tr>
+  <tr><td>403        </td><td>Failure. Request arguments are invalid.</td></tr>
+  <tr><td>404        </td><td>Failure. The resource was not found.</td></tr>
+  <tr><td>500        </td><td>Failure. Internal Service Error.</td></tr>
 </table>
 
 \* See the section on Error Handling for greater detail on response bodies for failure codes.
@@ -71,11 +71,7 @@ After you obtain a token, include it in the HTTP header of your request, as a UR
 
 Example using API token as URL parameter:
 
-
-``https://<vanity>.invoca.net/api/xxxxxx/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU``
 `https://<vanity>.invoca.net/api/xxxxxx/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU`
-https://<vanity>.invoca.net/api/xxxxxx/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU
-xxxxxx
 
 Example using Curl to make an API call with token-based authentication:
 
