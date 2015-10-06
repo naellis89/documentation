@@ -237,5 +237,5 @@ pre {
 
 /* "view source" link */
 .wy-breadcrumbs-aside {
-  display: none;
+  display: none !important;
 }
