@@ -1,9 +1,9 @@
 .. invoca documentation
 
-invoca Web Services Platform API
+Invoca Web Services Platform API
 =================================
 
-The invoca Web Services Platform API allows developers to easily integrate into their applications without having to use a manual web portal.
+The Invoca Web Services Platform API allows developers to easily integrate into their applications without having to use a manual web portal.
 
 .. toctree::
    :maxdepth: 3
