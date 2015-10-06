@@ -136,7 +136,7 @@ li.wy-breadcrumbs-aside {
 }
 
 .wy-side-nav-search {
-  background-color: #FFF;
+  background-color: inherit;
 }
 
 .wy-nav-content-wrap {
