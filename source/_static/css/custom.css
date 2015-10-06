@@ -7,6 +7,11 @@ body {
   font-weight: 300;
 }
 
+img.logo {
+  width: 262px !important;
+  height: 97px !important;
+}
+
 p {
   margin: 24px 0px 24px 0px;
 }
