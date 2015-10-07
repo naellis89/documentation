@@ -193,7 +193,7 @@ pre {
 .wy-nav-content {
   background-color: #3F3F3F;
   max-width: 1200px;
-  padding: 60px;
+  //padding: 60px;
 }
 
 /* Links that live inside wy-nav-content don't change color */
@@ -246,4 +246,8 @@ pre {
 
 .wy-body-for-nav div.rst-versions {
   display: none !important;
+}
+
+.fa-home:before, .icon-home:before {
+  display: none;
 }
