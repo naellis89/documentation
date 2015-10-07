@@ -11,36 +11,160 @@ Therefore, the operations on the promo numbers interface are not idempotent.
 When you POST a promo number, we return the promo_number in the response body. This capability is JSON‐only.
 
 <table class="multiline-table">
-  <tr><th>Property</th><th>Type</th><th>Value</th></tr>
-  <tr><td>description</td><td>string (required)</td><td>Arbitrary description</td></tr>
-  <tr><td>media_type</td><td>string (required)</td><td>one of:</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Content / Review Site”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Discount / Coupon Site”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Display”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Email”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Rewards / Incentive”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Lead Form / Co Reg”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Search”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Social Media”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Software”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Online: Other”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Mobile: Apps”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Mobile: Display”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Mobile: Search”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Mobile: SMS”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Mobile: Other”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: Business Publication”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: Call Center”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: Direct Mail”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: Directory”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: Newspaper”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: In­Call Ad”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: Magazine”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: Outdoor”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: Radio”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: TV”</td></tr>
-  <tr><td>&nbsp;</td><td>&nbsp;</td><td>"Offline: Other”</td></tr>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Type</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>description</td>
+      <td>string (required)</td>
+      <td>Arbitrary description</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td>media_type</td>
+      <td>string (required)</td>
+      <td>one of:</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Content / Review Site”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Discount / Coupon Site”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Display”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Email”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Rewards / Incentive”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Lead Form / Co Reg”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Search”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Social Media”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Software”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Online: Other”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Mobile: Apps”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Mobile: Display”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Mobile: Search”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Mobile: SMS”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Mobile: Other”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: Business Publication”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: Call Center”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: Direct Mail”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: Directory”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: Newspaper”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: In­Call Ad”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: Magazine”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: Outdoor”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: Radio”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: TV”</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td>“Offline: Other”</td>
+    </tr>
+  </tbody>
 </table>
+
+
 
 Endpoint:
 `https://invoca.net/api/2015-05-01/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/promo_numbers/<promo_number>.json`
