@@ -90,6 +90,77 @@ Node Parameters and Usage
 
 Node Details
 
+<table>
+  <tr><th>Node Type</th><th>Details</th></tr>
+  <tr><td>Menu</td><td>Can have 1‐9 child nodes, with each child corresponding to the 1‐9 buttons.</td></tr>
+  <tr><td>Connect</td><td>May not have any children. The prompt will be read before connecting to the provided phone number.</td></tr>
+  <tr><td>EndCall</td><td>May not have any children. The prompt will be read before connecting to the provided phone number.</td></tr>
+  <tr><td>SmsPromo</td><td>May have exactly 1 child node. After accepting or declining the promotional sms, the child node will be played. To accept the promotional sms, the user must push 9 on the phone (this should be added as part of the prompt). Only numbers recognized as mobile phones will be offered the sms option.</td></tr>
+  <tr><td>Condition</td><td>May have exactly 2 child nodes. If the conditions are met, the first child is played. If they are not met then the second child plays. See the conditions section and examples below for details on valid conditions.</td></tr>
+  <tr><td>NearestBranch</td><td>May have exactly 1 child node. The caller will be prompted to verify their location prior to forwarding the call. If no branch is within ‘radius_miles’ of the caller then the child node will be played.</td></tr>
+  <tr><td>VerifyLocation</td><td>May have exactly 1 child node. The prompt will play before verifying the callers location. The child node will be played after verifying the callers location.</td></tr>
+</table>
+
+
+Parameter Details
+
+<table>
+  <tr><th>Node Type</th><th>Type</th><th>Value</th></tr>
+  <tr><td>condition</td><td>String</td><td>The boolean condition that decided if the first or second child will be played in a condition node.</td></tr>
+  <tr><td>destination_country_code</td><td>String</td><td>The country code for the destination_phone_number.</td></tr>
+  <tr><td>destination_phone_number</td><td>String</td><td>The phone number to forward the caller to.</td></tr>
+  <tr><td>prompt</td><td>String</td><td>The text that will be read before a nodes action occurs. An empty string will result in no prompt being read, and the following action will occur immediately.</td></tr>
+  <tr><td>sms_promo_copy</td><td>String</td><td>The text that will be sent to the caller if they accept the promotional sms.</td></tr>
+  <tr><td>sms_promo_delay</td><td>Integer</td><td>The time delay in seconds before sending the promotional sms. This may be 1 (Immediately), 1800 (30 minutes), 86400 (1 day), 604800 (7 days), or 2592000 (30 days).</td></tr>
+  <tr><td>sms_promo_sender</td><td>String</td><td>The email address that will be shown in the sms. This defaults to sms@invoca.net.</td></tr>
+</table>
+
+
+Conditions
+
+<table>
+  <tr><th>Condition</th><th>Details</th></tr>
+  <tr><td>during_hours</td><td>True if the caller is calling during the hours specified in the campaign.</td></tr>
+  <tr><td>in_region</td><td>True if the caller is calling from the region specified in the campaign.</td></tr>
+  <tr><td>landline</td><td>True if the caller is calling from a landline phone.</td></tr>
+  <tr><td>mobile</td><td>True if the caller is calling from a mobile phone.</td></tr>
+  <tr><td>pressed[key]</td><td>True if the caller pressed the named key.</td></tr>
+  <tr><td>repeat</td><td>True if the caller has already called this campaign in the last N days (the interval N can be set on the campaign; the default is 30 days).</td></tr>
+  <tr><td>sms_sent</td><td>The caller chose to receive a text message during the call.</td></tr>
+  <tr><td>and</td><td>Joins two conditions and is true if both conditions are true.</td></tr>
+  <tr><td>or</td><td>Joins two conditions and is true if either condition is true.</td></tr>
+  <tr><td>not</td><td>Inverts the following condition.</td></tr>
+  <tr><td>( )</td><td>Used for grouping.</td></tr>
+</table>
+
+
+Example Consitions
+
+<table>
+  <tr><th>Example</th><th>Condition</th></tr>
+  <tr><td>Call duration was a minute and a half or longer</td><td>duration >= 1 min 30 sec.</td></tr>
+  <tr><td>Call came in during business hours</td><td>during_hours.</td></tr>
+  <tr><td>Call was from a mobile phone where the caller pressed the 2 key in response to the first menu</td><td>mobile and pressed[2].</td></tr>
+  <tr><td>Call was from the selected geographic region or was longer than 12 seconds</td><td>in_region or duration > 12 sec.</td></tr>
+  <tr><td>Caller pressed 1 to the first question in a series and was not in the geographic region or calling during business hours</td><td>pressed[a 1] and not (in_region or during_hours).</td></tr>
+</table>
+
+
+Note that and is higher precedence than or. So if you use both in a condition like this:
+
+    mobile or in_region and during_hours
+
+it is equivalent to this:
+
+    mobile or (in_region and during_hours)
+
+
+
+Endpoint:
+
+`https://invoca.net/api/2015-05-01/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>.json`
+
+
 ## GET all campaigns for an Advertiser
 GET `/advertiser_campaigns`
 
