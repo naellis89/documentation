@@ -22,37 +22,37 @@ You are not allowed to delete campaigns.
   <tr><td>url</td><td>string</td><td>Click URL Template.</td></tr>
   <tr><td>timezone</td><td>string</td><td>Supported Time Zones: “Pacific Time (US & Canada)”, “Mountain Time (US & Canada)”, “Central Time (US & Canada)”, “Eastern Time (US & Canada)”, “London”, “UTC”.</td></tr>
   <tr><td>operating_24_7</td><td>boolean</td><td></td></tr>
-  <tr><td>affiliate_payout</td><td></td><td></td></tr>
+  <tr><td><b>affiliate_payout</b></td><td></td><td></td></tr>
   <tr><td>currency</td><td>string</td><td>USD, GBP, EUR.</td></tr>
-  <tr><td>policies</td><td></td><td></td></tr>
+  <tr><td><b>policies</b></td><td></td><td></td></tr>
   <tr><td>amount</td><td>decimal</td><td>Payout Amount.</td></tr>
   <tr><td>condition</td><td>string</td><td>Condition options depend on the following Campaign Setup items being in place: Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Connect Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Repeat, In Region (specified across multiple Regions), During Hours, Key Press, Is Mobile, Is Landline, Send SMS All may be grouped with logic operators (AND/OR/NOT).</td></tr>
   <tr><td>type</td><td>string</td><td>One of: Base, Bonus.</td></tr>
-  <tr><td>advertiser_payin</td><td></td><td></td></tr>
+  <tr><td><b>advertiser_payin</b></td><td></td><td></td></tr>
   <tr><td>currency</td><td>string</td><td>Supported Currencies: ‐ USD, GBP, EUR.</td></tr>
-  <tr><td>policies</td><td></td><td></td></tr>
+  <tr><td><b>policies</b></td><td></td><td></td></tr>
   <tr><td>amount</td><td>integer</td><td>Advertiser Payin Amount.</td></tr>
   <tr><td>condition</td><td>string</td><td>Condition options depend on the following Campaign Setup items being in place: Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Connect Duration (seconds/minutes) and (greater than, greater than or equal to, less than, less than or equal to, equal to), Repeat, In Region (specified across multiple Regions), During Hours, Key Press, Is Mobile, Is Landline, Send SMS. All may be grouped with logic operators (AND/OR/NOT).</td></tr>
   <tr><td>type</td><td>string</td><td>One of: Base, Bonus.</td></tr>
-  <tr><td>hours</td><td></td><td></td></tr>
+  <tr><td><b>hours</b></td><td></td><td></td></tr>
   <tr><td>[day of week]\_open (e.g. friday_open)</td><td>string</td><td>Open Hours. In seconds past midnight (e.g. 0 for midnight, 32400 for 9:00 AM).</td></tr>
   <tr><td>[day of week]\_close (e.g. friday_close)</td><td>string</td><td>Closed Hours. In seconds past midnight (e.g. 0 for midnight, 75600 for 9:00 PM).</td></tr>
   <tr><td>[day of week]\_closed (e.g. sunday_closed)</td><td>string</td><td>true, false, or null. Whether the business is closed that day of the week.</td></tr>
-  <tr><td>named_regions</td><td></td><td></td></tr>
+  <tr><td><b>named_regions</b></td><td></td><td></td></tr>
   <tr><td>name</td><td>string</td><td>Region Name.</td></tr>
-  <tr><td>regions</td><td></td><td></td></tr>
+  <tr><td><b>regions</b></td><td></td><td></td></tr>
   <tr><td>region_type</td><td>string</td><td>Region Type. Can be one of: Zone, City, State, Country.</td></tr>
   <tr><td>value</td><td>string</td><td>Region Value, e.g. “Sacramento, CA”, or just “CA”.</td></tr>
   <tr><td>ivr_tree</td><td>hash</td><td>See following Advertiser Campaign IVR Section.</td></tr>
-  <tr><td>budget_activities</td><td></td><td>Only applicable for AffiliateEnabled campaigns.</td></tr>
-  <tr><td>budget_cap_alert</td><td></td><td></td></tr>
+  <tr><td><b>budget_activities</b></td><td></td><td>Only applicable for AffiliateEnabled campaigns.</td></tr>
+  <tr><td><b>budget_cap_alert</b></td><td></td><td></td></tr>
   <tr><td>reset_period</td><td>string(required)</td><td>Budget will reset based on this entry. One of: Daily, Weekly, Monthly, Quarterly, Ongoing.</td></tr>
   <tr><td>starts_at</td><td>date (required)</td><td>Budget Start.</td></tr>
   <tr><td>budget_currency</td><td>string(required)</td><td>Budget Currency.</td></tr>
   <tr><td>time_zone</td><td>string (required)</td><td>Supported Time Zones: “Pacific Time (US & Canada)”, “Mountain Time (US & Canada)”, “Central Time (US & Canada)”, “Eastern Time (US & Canada)”, “London”, “UTC”.</td></tr>
   <tr><td>budget_amount</td><td>decimal (required)</td><td>Budget Amount.</td></tr>
   <tr><td>include_call_fees</td><td>boolean</td><td>True if you want call fees to be included in the budget.</td></tr>
-  <tr><td>call_cap_alert</td><td></td><td></td></tr>
+  <tr><td><b>call_cap_alert</b></td><td></td><td></td></tr>
   <tr><td>reset_period</td><td>string (required)</td><td>Budget will reset based on this entry. One of: Daily, Weekly, Monthly, Quarterly, Ongoing.</td></tr>
   <tr><td>starts_at</td><td>date (required)</td><td>Call Cap Start.</td></tr>
   <tr><td>budget_currency</td><td>string (required)</td><td>Budget Currency.</td></tr>
