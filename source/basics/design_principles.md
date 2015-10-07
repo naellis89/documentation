@@ -71,7 +71,7 @@ After you obtain a token, include it in the HTTP header of your request, as a UR
 
 Example using API token as URL parameter:
 
-`https://<vanity>.invoca.net/api/xxxxxx/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU`
+`https://<vanity>.invoca.net/api/@version/advertisers.json?oauth_token=YbcFHZ38FNfptfZMB0RZ6dk9dOJCaCfU`
 
 Example using Curl to make an API call with token-based authentication:
 
@@ -106,10 +106,11 @@ The API version is given as a date in the path.
 
 ### Dedicated Subdomain
 <hr>
+
 All APIs are accessed through the dedicated subdomain of invoca.net that is used for the
 network. For example, a network named "LeadTrust" might be assigned
 leadtrust.invoca.net. We recommend that, when making your API calls, you place your
-&lt;network_id&gt; after the API version in the url.
+<network_id> after the API version in the url.
 
 ### Request Parameter Format & Response Body Format
 <hr>
