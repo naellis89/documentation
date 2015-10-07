@@ -165,8 +165,8 @@ pre {
 /* search box */
 .wy-side-nav-search {
   background-color: inherit;
-  margin-top: 2px !important;
-  margin-bottom: 0px !important;
+  margin-top: 0px !important;
+  margin-bottom: 10px !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
 }
