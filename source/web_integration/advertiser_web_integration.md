@@ -645,8 +645,7 @@ The following is an example using Ruby on Rails as the web technology.  Regardle
 
   Server code (controller/action):
 
-.. code-block:: ruby
-
+<pre><code>
 class LandingPageController < ApplicationController
   RING_POOL_BY_REFERRER = { "google"   : [ 7, 8  ],
                             "facebook" : [ 7, 10 ],
@@ -660,20 +659,18 @@ class LandingPageController < ApplicationController
 
   private
 
-  # parses string and returns "google", "facebook", etc
+  \# parses string and returns "google", "facebook", etc
   def domain_name_from_referrer( referrer )
     ...
   end
 end
+</pre></code>
 
-{: .prettyprint .theme-github}
 
 <br>
 
- HTML page (template):
-
-.. code-block:: html
-
+<pre><code>
+"
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -703,9 +700,8 @@ end
     </script>
   </body>
 </html>
-
-
-{: .prettyprint .theme-github}
+"
+</pre><code>
 
 Notice that there is only ever one installation of the Web Integration code, and the only thing that needs to be set up on the server side are the IDs of the RingPool and Campaign.
 
