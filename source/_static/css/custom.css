@@ -10,6 +10,7 @@ body {
 img.logo {
   width: 262px !important;
   height: 97px !important;
+  padding: 0px !important;
 }
 
 img.info-img {
@@ -164,6 +165,17 @@ pre {
 /* search box */
 .wy-side-nav-search {
   background-color: inherit;
+  margin-top: 2px !important;
+  margin-bottom: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.wy-side-nav-search a {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 /* nav menu side bar */
