@@ -94,11 +94,10 @@ Node Details
 GET `/advertiser_campaigns`
 
 ### Examples
-
+<hr>
 Read all campaigns for Advertiser 2 id from network
 
 Endpoint:
-
 `https://invoca.net/api/@version/<network_id>/advertisers/2/advertiser_campaigns.json`
 
 Response Body:
@@ -413,7 +412,7 @@ Response Body:
 POST `/advertiser_campaigns/<advertiser_campaign_id>`
 
 ### Examples
-
+<hr>
 Example POST to non‐existing Advertiser Campaign fJauFbSEGHKw8ADEGv under Advertiser cFUyYnFHyiYA42TrpM in the Demo Network.
 
 POST
@@ -505,7 +504,6 @@ Endpoint:
 Create Campaign fJauFbSEGHKw8ADEGv for Advertiser cFUyYnFHyiYA42TrpM on network 1 (POST)
 
 Endpoint:
-
 `https://invoca.net/api/@version/<network_id>/advertisers/cFUyYnFHyiYA42TrpM/advertiser_campaigns/fJauFbSEGHKw8ADEGv.json`
 
 Request Body
@@ -622,3 +620,169 @@ Request Body
     }
   }
 }</pre></code>
+
+## Update an Advertiser Campaign
+PUT `/advertiser_campaigns/<advertiser_campaign_id>`
+
+### Examples
+<hr>
+Assuming you used the curl command to create the campaign with id 445566, the following commands will update that campaign to have a new IVR tree.
+
+Example IVR Tree updates:
+
+(1) Verify the callers location, then if on the West Coast (setup previously) forward to a call center, otherwise hang up after playing a prompt.
+
+<pre><code>curl­ -XPUT -H "Content­Type: application/json" -­u 'login:pass'
+'https://vanity.invoca.net/api/2015-05-01/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+-d '
+{"ivr_tree":
+ {"root":
+   {"node_type":"VerifyLocation",
+    "children":
+     [{"node_type":"Condition",
+       "condition":"in_region[West Coast]",
+       "children":
+         [{"children":[],
+           "condition":"",
+           "node_type":"Connect",
+           "destination_phone_number":"8004377950",
+           "destination_country_code":"1"},
+           {"node_type":"EndCall",
+            "prompt":"We are sorry, we currently cannot service your area. Goodbye."}]}]
+   },
+   "record_calls":true}}'  -v
+</code></pre>
+
+(2) Present the options for multiple departments, if sales is selected check if office is open. If the office is open, forward the call, if not play a prompt and then hangup.
+
+<pre class="prettyprint theme-github"><code>curl -XPUT -H "Content­Type: application/json" -u 'login:pass'
+'https://vanity.invoca.net/api/2015-05-01/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+-d '
+{"ivr_tree":{
+   "record_calls":true,
+   "root":{
+     "node_type":"Menu",
+     "prompt":"Please press 1 for sales or 2 for 24 hour support",
+     "children":[
+       { "node_type":"Condition",
+         "condition":"during_hours",
+         "children":[
+           { "node_type":"Connect",
+             "destination_phone_number":"8004377950",
+             "destination_country_code":"1",
+             "prompt":"Thank you, transferring you now"
+           },
+           { "node_type":"EndCall",
+             "prompt":"We are currently closed. Please call back during business hours. Goodbye"
+           }]},
+       { "node_type":"Connect",
+         "destination_phone_number":"8004377950",
+         "destination_country_code":"1",
+         "prompt":"Thank you, transferring you now"
+       }]}}}'  -v
+</code></pre>
+
+(3) Offer an sms to see current offers and then connect to a call center.
+
+<pre class="prettyprint theme-github"><code>curl -XPUT -H "Content­Type: application/json" -u 'login:pass'
+'https://vanity.invoca.net/api/2015-05-01/advertisers/:advertiser_id/advertiser_campaigns/445566.json' \
+-d '
+{"ivr_tree":{
+   "record_calls":true,
+   "root":{
+     "node_type":"Menu",
+     "prompt":"Please press 1 for sales or 2 for 24 hour support",
+     "children":[
+       { "node_type":"Condition",
+         "condition":"during_hours",
+         "children":[
+           { "node_type":"Connect",
+             "destination_phone_number":"8004377950",
+             "destination_country_code":"1",
+             "prompt":"Thank you, transferring you now"
+           },
+           { "node_type":"EndCall",
+             "prompt":"We are currently closed. Please call back during business hours. Goodbye"
+           }]},
+       { "node_type":"Connect",
+         "destination_phone_number":"8004377950",
+         "destination_country_code":"1",
+         "prompt":"Thank you, transferring you now"
+       }]}}}'  -v
+</code></pre>
+
+## Quick Stats
+GET `/advertiser_campaigns/<advertiser_campaign_id>/quick_stats`
+
+### Examples
+<hr>
+The full range of statistics for a campaign are available through the reporting UI. However, a quick set of overview statistics for a campaign are available through the API using the following endpoint.
+
+Endpoint:
+`https://invoca.net/api/2015-05-01/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_>/quick_stats.json`
+
+Response Body:
+<pre class="prettyprint theme-github"><code>{
+ "stats": {
+   "last_30days": {
+     "call_avg_total_duration": 0.0,
+     "call_count": 0
+   },
+   "last_7days": {
+     "call_avg_total_duration": 0.0,
+     "call_count": 0
+   },
+   "today": {
+     "call_avg_total_duration": 0.0,
+     "call_count": 0
+   }
+ }
+}</code></pre>
+
+## Set Campaign State to Live (GET)
+
+GET `/advertiser_campaigns/<advertiser_campaign_id>/go_live`
+
+### Examples
+<hr>
+
+Advertiser campaigns can have their state controlled through this API. When a campaign is created through the API, its “future terms” are being set, and its state is not yet live. When the go_live endpoint is hit, the “future terms” are promoted to “current terms” and the campaign becomes live.
+
+Use this request url format:
+
+`https://invoca.net/api/2015-05-01/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/go_live.json`
+
+## Set Campaign State to Live (POST)
+
+POST `/advertiser_campaigns/<advertiser_campaign_id>/go_live`
+
+### Examples
+<hr>
+
+Advertiser campaigns can have their state controlled through this API. When a campaign is created through the API, its “future terms” are being set, and its state is not yet live. When the go_live endpoint is hit, the “future terms” are promoted to “current terms” and the campaign becomes live.
+
+Use this request url format:
+
+`https://invoca.net/api/2015-05-01/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/go_live.json`
+
+## Set Campaign State to Archived (GET)
+
+GET `/advertiser_campaigns/<advertiser_campaign_id>/archive`
+
+### Examples
+<hr>
+
+If a campaign has previously been set to live, either through the API or through the UI, it can be archived, which effectively shuts it down. An archived campaign can be returned to live at a later time. To archive a campaign use this the following endpoint URL:
+
+`https://invoca.net/api/2015-05-01/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/archive.json`
+
+## Set Campaign State to Archived (POST)
+
+GET `/advertiser_campaigns/<advertiser_campaign_id>/archive`
+
+### Examples
+<hr>
+
+If a campaign has previously been set to live, either through the API or through the UI, it can be archived, which effectively shuts it down. An archived campaign can be returned to live at a later time. To archive a campaign use this the following endpoint URL:
+
+`https://invoca.net/api/2015-05-01/<network_id>/advertisers/<advertiser_id_from_network>/advertiser_campaigns/<advertiser_campaign_id_from_network>/archive.json`
