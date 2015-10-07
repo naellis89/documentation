@@ -199,6 +199,14 @@ pre {
     background-color: #333;
 }
 
+.wy-menu-vertical a {
+  color: rgb(132, 188, 13);
+}
+
+.wy-menu-vertical li.current > a {
+  color: rgb(132, 188, 13);
+}
+
 /*********************RIGHT HAND CONTENT************************/
 /* wraps up .wy-nav-content and its subordinates */
 .wy-nav-content-wrap {
