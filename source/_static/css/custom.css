@@ -180,7 +180,7 @@ pre {
 }
 
 .wy-side-nav-search a:hover {
-  color: #373737;
+  color: rgba(0, 0, 0, 0);
 }
 
 /* nav menu side bar */
