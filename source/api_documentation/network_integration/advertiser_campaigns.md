@@ -90,7 +90,7 @@ Node Parameters and Usage
 
 Node Details
 
-## Get all campaigns for an Advertiser
+## GET all campaigns for an Advertiser
 GET `/advertiser_campaigns`
 
 ### Examples
@@ -106,7 +106,7 @@ An array of campaigns are returned.
 
 <hr>
 
-## Get a campaign for an Advertiser
+## GET a campaign for an Advertiser
 GET `/advertiser_campaigns/<advertiser_campaign_id>`
 
 ### Examples
