@@ -176,7 +176,11 @@ pre {
   margin-bottom: 0px !important;
   padding-top: 0px !important;
   padding-bottom: 0px !important;
-  color: #333;
+  //color: #333;
+  color: inherit;
+}
+
+.wy-side-nav-search a:hover {
 }
 
 /* nav menu side bar */
