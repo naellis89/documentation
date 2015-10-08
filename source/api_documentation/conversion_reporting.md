@@ -201,23 +201,23 @@ Output:
 
 This is a description of some of the parameters in the previous cURL example.
 
-    curl -u 'example@callcenter.api:secretPW':
-If using cURL, this is how credentials are passed. The username is ‘example@callcenter.api’ and the password is ‘secretPW’. The two strings need to be separated with a colon character.
+    curl -u 'example@callcenter.api:secretPW'
+*    If using cURL, this is how credentials are passed. The username is ‘example@callcenter.api’ and the password is ‘secretPW’. The two strings need to be separated with a colon character.
 
     'https://api0.invoca.net/api/2015-07-01/calls/23.xml' -k -v
-: The URL where the call result is sent. The API version is “2010-04-22” and the unique Conversion Reporting ID is “23”.
+*    The URL where the call result is sent. The API version is “2010-04-22” and the unique Conversion Reporting ID is “23”.
 
     -d reference_id='2935812450'
-: This ID (if provided) needs to be unique for each call within a call center, and is the handle for future updates on this call or conversion.
+*    This ID (if provided) needs to be unique for each call within a call center, and is the handle for future updates on this call or conversion.
 
     -d start_time_t='1273589993'
-: The call start time in UTC.
+*    The call start time in UTC.
 
     -d called_phone_number='+1 8773593504'
-: The phone number the caller dialed.
+*    The phone number the caller dialed.
 
     -d calling_phone_number='+1 2143283408'
-: The phone number the caller is calling from.
+*    The phone number the caller is calling from.
 
     -d sku_list[]='DVD'
 
@@ -226,7 +226,7 @@ If using cURL, this is how credentials are passed. The username is ‘example@ca
     -d sku_list[]='cleaner'
 
     -d quantity_list[]=1
-: sku_list and quantity_list are closely related. The quantity_list must appear in the same order as the sku_list. For this example, the sku DVD has a quantity value of 2 while cleaner is 1.
+*    sku_list and quantity_list are closely related. The quantity_list must appear in the same order as the sku_list. For this example, the sku DVD has a quantity value of 2 while cleaner is 1.
 
 ### Search Algorithm to Find Matching Call
 <hr>
