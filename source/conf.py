@@ -53,7 +53,7 @@ copyright = u'2014, invoca'
 # built documents.
 #
 # The short X.Y version.
-version = '2015-05-01'
+version = '2037-12-31'
 pnapi_version = '2013-07-01'
 # The full version, including alpha/beta/rc tags.
 release = '1.4.10'
