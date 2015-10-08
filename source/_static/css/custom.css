@@ -108,13 +108,12 @@ tr:nth-child(odd) {
   background-color: #FFF;
 }
 
-.multiline-table tr:nth-child(0) {
-  color: #636060;
-  background-color: #efefef;
+.multiline-table tbody:nth-child(2n) td {
+    background-color: #efefef;
 }
 
-.multiline-table tr:nth-child(n + 1) {
-  color: #4A4A4A;
+.multiline-table tr {
+  color: #636060;
   background-color: #FFF;
 }
 
