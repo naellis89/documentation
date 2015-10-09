@@ -137,94 +137,64 @@ Client Side Integration & Parameters
 
 The client side settings are listed in the table below.  Most installations do not require any client side changes.  To initialize the Web Integration code, pass the integration settings in a hash to the Invoca.advertiser_integration function.
 
-~~~
-  Invoca.advertiser_integration = {
+<pre><code>Invoca.advertiser_integration = {
     id : 'YOUR_ID_HERE'
   };
-~~~
-{: .prettyprint .theme-github}
+</code></pre>
 
-|---
-|Required parameters: |  |  |
-|-|-|-
-| id | String | Unique Advertiser ID. (Auto Populated in Tools, Web Integration, Get Code tab)
-{: .multiline-table}
-
-|---
-|*Optional parameters:* |  |  |
-|---
-|numberToReplace | String | Default: `''`
-| | | Note: This field can be specified on the server side on the Web Integration, Settings tab.
-| | | It is recommended to use this and not add this parameter to the Javascript.  
-| | | The phone number on the page to replace with an Invoca promo number.
-| | | Prefix international numbers with '+' and separate the country code with a space. Other punctuation is ignored but can be used for readability.  The number is replaced in the same format as is used on the page.
-| | | Example values:
-| | | '805-555-5784', '+1 8055555784', '020 8905 1456', or '+44 020 8905 1456'
-|---
-|numberSelector | String | Default: `''`
-| | |The selector of the HTML elements where you want phone number inserted.
-| | |Prefix IDs with '#' and classes with '.'
-| | |
-| | |For example, '.promoNumber' replaces the number in all HTML elements having class="promoNumber".
-|---
-|campaignId | String | Default: `null`
-| | |Note: This option can be specified on the server side on the Web Integration, Settings tab (default campaign for general site traffic).  It is recommended to use the server side settings and not add this parameter to the Javascript.
-| | |Unique campaign ID.
-| | |If you need separate settings per landing page, then this field is required.
-|---
-|ringPoolId | String | Default: `null`
-| | |Note: This can be specified on the server side on the Web Integration, Settings tab (default RingPool for general site traffic). It is recommended to use the server side settings and not add this parameter to the Javascript.
-| | |Unique RingPool ID.
-| | |If you need separate settings per landing page, then this field is required.  
-| | |For general traffic coming to the site, the RingPool specified in Advanced Tracking Settings is used to allocate a number. If the RingPool is not specified, the campaign ID is used to find a valid RingPool.
-|---
-|numberSeparator | String | Default: `'-'`
-| | |Character to separate phone digit groups.
-|---
-|numberLeadingOne | Boolean | Default: `true`.
-| | |If true, inserts a leading '1' then the separator in front of the number.
-|---
-|showSelector | String | Default: `''`
-| | |The selector of the HTML elements you want to set to visible (using jQuery.show) when a promo number is swapped out. Prefix IDs with '#' and classes with '.' .
-| | |This is useful for having a span that says "call now:" which should only be displayed if a valid phone number is inserted.  See also hideSelector. (The elements are not shown if Click to Call is being used and ctcUseButton is set to true.)
-|---
-|hideSelector | String | Default: `''`
-| | |The selector of the HTML elements you want to have set to display:none (removed from the page visually). Prefix IDs with '#' and classes with '.'
-| | |This is useful for hiding the image that has the default company phone number embedded in it, when a valid promo number is found. See also showSelector and notVisibleSelector.
-|---
-|notVisibleSelector | String | Default: `''`
-| | |The selector of the HTML elements you want to have set to visibility:hidden (hide on page in place). Prefix IDs with '#' and classes with '.'
-| | |This is useful for hiding an element when a valid promo number is found but keeping the page layout the same. See also hideSelector and showSelector.
-|---
-|onLoadWithNumber | Function | Default: `null`
-| | |A callback function called after web integration has run and modified the DOM using the selectors specified in the parameters.
-| | |Called with the following arguments:
-| | |is_ctc       boolean  - true if CTC is enabled
-| | |phone_number string      - formatted phone number (empty if CTC is enabled and a promo number is not available).
-|---
-|onLoadNoNumber | Function | Default: `null`
-| | |A callback function called after Web Integration runs and no modification is made.
-|---
-|mobileClickToCall | Boolean | Default: `true`
-| | |When true, automatically wraps valid promo numbers in tel links when viewed on a mobile browser, so they are clickable and launch a dialer.  Non-mobile browsers will get the default behavior of just a phone number.
-| | |If your site already has dynamic behavior specified on the phone number DOM element, you may want to set this to false to prevent conflicts.
-|---
-|networkParamName | String | Default: `'sid'`
-| | |The query parameter name used for passing promo numbers through click-tracking URLs.  (Configured within your main network, if available)
-|---
-|ctcUseButton | Boolean | Default: `true`
-| | |Applicable when web integration is set to use the online click-to-call form. When true, modifies the elements specified by numberSelector to contain a "Call Me!" button (or ctcButtonContent if set), otherwise inserts the phone number (when available) and wires up a click handler on the element.
-| | |A class of click_to_call_button is added to the element specified by numberSelector. You can add CSS styling to that class to customize the look to match your website.
-|---
-|ctcButtonContent | String | Default: `'<button type="button">Call Now!</button>'`
-| | |Applicable when Web Integration is using the online click-to-call form.  HTML content to override the default online CTC call to action (button or hyperlink is recommended).
-|---
-|debug | Boolean | Default: `false`
-| | | When true, debug information is printed to the console in browsers that support console.log() and console.error()
-| | |Safari & Chrome using the Developer JavaScript Console
-| | |Firefox with Firebug enabled
-| | |IE8+ with Developer Tools enabled
-{: .multiline-table}
+<table>
+  <tr><th>Required parameters:</th><th></th><th></th></tr>
+  <tr><td>id</td><td>String</td><td>Unique Advertiser ID. (Auto Populated in Tools, Web Integration, Get Code tab)</td></tr>
+</table>
+<br>
+<table>
+  <tbody>
+  <tr><th><em>Optional parameters:</em></th><th></th><th></th></tr>
+  <tr><td>numberToReplace</td><td>String</td><td>Default: <code>''</code><br><br>Note: This field can be specified on the server side on the Web Integration, Settings tab.<br><br>
+                                                 It is recommended to use this and not add this parameter to the Javascript. <br><br>
+                                                 The phone number on the page to replace with an Invoca promo number.<br><br>
+                                                 Prefix international numbers with ‘+’ and separate the country code with a space. Other punctuation is ignored but can be used for readability.
+                                                 The number is replaced in the same format as is used on the page.<br><br>
+                                                 Example values:<br><br>
+                                                 ‘805-555-5784’, ‘+1 8055555784’, ‘020 8905 1456’, or ‘+44 020 8905 1456’</td></tr>
+  <tr><td>numberSelector</td><td>String</td><td>Default: <code>''</code><br><br>The selector of the HTML elements where you want phone number inserted.<br><br>
+                                                Prefix IDs with ‘#’ and classes with ‘.’<br><br><br><br>For example, ‘.promoNumber’ replaces the number in all HTML elements having class=”promoNumber”.</td></tr>
+  <tr><td>campaignId</td><td>String</td><td>Default: <code>null</code><br><br>
+                                            Note: This option can be specified on the server side on the Web Integration, Settings tab (default campaign for general site traffic).
+                                            It is recommended to use the server side settings and not add this parameter to the Javascript.<br><br>
+                                            Unique campaign ID.<br><br>
+                                            If you need separate settings per landing page, then this field is required.</td></tr>
+  <tr><td>ringPoolId</td><td>String</td><td>Default: <code>null</code><br><br>
+                                            Note: This can be specified on the server side on the Web Integration, Settings tab (default RingPool for general site traffic)
+                                            It is recommended to use the server side settings and not add this parameter to the Javascript.<br><br>
+                                            Unique RingPool ID.<br><br>If you need separate settings per landing page, then this field is required.<br><br>
+                                            For general traffic coming to the site, the RingPool specified in Advanced Tracking Settings is used to allocate a number. If the RingPool is not specified, the campaign ID is used to find a valid RingPool.</td></tr>
+  <tr><td>numberSeparator</td><td>String</td><td>Default: <code>'-'</code><br><br>Character to separate phone digit groups.</td></tr>
+  <tr><td>numberLeadingOne</td><td>Boolean</td><td>Default: <code>true</code><br><br>If true, inserts a leading ‘1’ then the separator in front of the number.</td></tr>
+  <tr><td>showSelector</td><td>String</td><td>Default: <code>''</code><br><br>The selector of the HTML elements you want to set to visible (using jQuery.show) when a promo number is swapped out. Prefix IDs with ‘#’ and classes with ‘.’ .<br><br>
+                                              This is useful for having a span that says “call now:” which should only be displayed if a valid phone number is inserted. See also hideSelector.
+                                              (The elements are not shown if Click to Call is being used and ctcUseButton is set to true.)</td></tr>
+  <tr><td>hideSelector</td><td>String</td><td>Default: <code>''</code><br><br>The selector of the HTML elements you want to have set to display:none (removed from the page visually). Prefix IDs with ‘#’ and classes with ‘.’<br><br>
+                                              This is useful for hiding the image that has the default company phone number embedded in it, when a valid promo number is found. See also showSelector and notVisibleSelector.</td></tr>
+  <tr><td>notVisibleSelector</td><td>String</td><td>Default: <code>''</code><br><br>The selector of the HTML elements you want to have set to visibility:hidden (hide on page in place). Prefix IDs with ‘#’ and classes with ‘.’<br><br>
+                                                    This is useful for hiding an element when a valid promo number is found but keeping the page layout the same. See also hideSelector and showSelector.</td></tr>
+  <tr><td>onLoadWithNumber</td><td>Function</td><td>Default: <code>null</code><br><br>A callback function called after web integration has run and modified the DOM using the selectors specified in the parameters.<br><br>
+                                                    Called with the following arguments:<br><br>is_ctc boolean - true if CTC is enabled<br><br>
+                                                    phone_number string - formatted phone number (empty if CTC is enabled and a promo number is not available).</td></tr>
+  <tr><td>mobileClickToCall</td><td>Boolean</td><td> Default: <code>true</code><br><br>When true, automatically wraps valid promo numbers in tel links when viewed on a mobile browser, so they are clickable and launch a dialer.
+                                                     Non-mobile browsers will get the default behavior of just a phone number.<br><br>
+                                                     If your site already has dynamic behavior specified on the phone number DOM element, you may want to set this to false to prevent conflicts.</td></tr>
+  <tr><td>networkParamName</td><td>String</td><td>Default: <code>'sid'</code><br><br>The query parameter name used for passing promo numbers through click-tracking URLs. (Configured within your main network, if available)</td></tr>
+  <tr><td>ctcUseButton</td><td>Boolean</td><td>Default: <code>true</code><br><br>Applicable when web integration is set to use the online click-to-call form.
+                                                                                 When true, modifies the elements specified by numberSelector to contain a “Call Me!” button (or ctcButtonContent if set),
+                                                                                 otherwise inserts the phone number (when available) and wires up a click handler on the element.<br><br>
+                                                                                 A class of click_to_call_button is added to the element specified by numberSelector. You can add CSS styling to that class to customize the look to match your website.</td></tr>
+  <tr><td>ctcButtonContent</td><td>String</td><td>Default: <code>'<xmp><button type="button">Call Now!</button></xmp>'</code><br><br>
+                                               Applicable when Web Integration is using the online click-to-call form. HTML content to override the default online CTC call to action (button or hyperlink is recommended).</td></tr>
+  <tr><td>debug</td><td>Boolean</td><td>Default: <code>false</code><br><br>When true, debug information is printed to the console in browsers that support console.log() and console.error()<br><br>
+                                                                           Safari & Chrome using the Developer JavaScript Console<br><br>Firefox with Firebug enabled<br><br>IE8+ with Developer Tools enabled</td></tr>
+  </tbody>
+</table>
 
 <br>
 
@@ -263,7 +233,7 @@ All "selector" parameters are a comma separated list of IDs or classes, where ID
 
 * Not valid:
 
-  `table > .promoNumber`
+    table > .promoNumber
 
   `.promoNumber:first`
 
@@ -280,8 +250,7 @@ Simple Examples
 Default example of replacing multiple phone numbers on a page, with no additional options specified: ( 'YOUR_ID_HERE' represents where the unique advertiser ID is inserted.)
 </p>
 
-~~~
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<pre><code><xmp><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -308,9 +277,7 @@ Default example of replacing multiple phone numbers on a page, with no additiona
       } catch( e ){ }
     </script>
   </body>
-</html>
-~~~
-{: .prettyprint .theme-github}
+</html></xmp></code></pre>
 
 <br>
 
@@ -318,8 +285,7 @@ Default example of replacing multiple phone numbers on a page, with no additiona
 Example with NumberToReplace options specified on the client side, replacing multiple phone numbers on a page:
 </p>
 
-~~~
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<pre><code><xmp><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -347,10 +313,7 @@ Example with NumberToReplace options specified on the client side, replacing mul
       } catch( e ){ }
     </script>
   </body>
-</html>
-~~~
-{: .prettyprint .theme-github}
-
+</html></xmp></code></pre>
 <br>
 
 <h3 id="advanced_examples">
@@ -362,8 +325,7 @@ Advanced Examples
 Example changing the phone number presentation using the NumberSelector option on the client side:
 </p>
 
-~~~
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<pre><code><xmp><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -390,18 +352,14 @@ Example changing the phone number presentation using the NumberSelector option o
       } catch( e ){ }
     </script>
   </body>
-</html>
-~~~
-{: .prettyprint .theme-github}
-
+</html></xmp></code></pre>
 <br>
 
 <p id="default_phone_number">
 Example website that has the default phone number embedded in an image:
 </p>
 
-~~~
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<pre><code><xmp><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -430,16 +388,12 @@ Example website that has the default phone number embedded in an image:
       } catch( e ){ }
     </script>
   </body>
-</html>
-~~~
-{: .prettyprint .theme-github}
-
+</html></xmp></code></pre>
 <br>
 
 Example website that has no default phone number, and wants to show a call to action when a promo number is used:
 
-~~~
-<pre><code><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<pre><code><xmp><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -468,18 +422,14 @@ Example website that has no default phone number, and wants to show a call to ac
       } catch( e ){ }
     </script>
   </body>
-</html>
-~~~
-{: .prettyprint .theme-github}
-
+</html></xmp></code></pre>
 \* For sites with dynamic numbers through a third party, the Invoca code can still swap promo numbers over the third party numbers by placing the span tags around the code: `<span class="promoNumber">INSERT THIRD PARTY CODE HERE</span>`
 
 <br>
 
 Example using callbacks for custom behavior. (Note that adding tel links to numbers now happens automatically, so using a callback is no longer necessary!)
 
-~~~
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<pre><code><xmp><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -519,10 +469,7 @@ Example using callbacks for custom behavior. (Note that adding tel links to numb
       } catch( e ){ }
     </script>
   </body>
-</html>
-~~~
-{: .prettyprint .theme-github}
-
+</html></xmp></code></pre>
 <br>
 
 <h3 id="capture_additional_parameters">
@@ -533,8 +480,7 @@ Capturing Additional Parameters with JavaScript</h3>
 You can capture additional RingPool parameters through client-side JavaScript using the poolParams option. In the following example, the visitor’s landing page timestamp is set to the poolParam “landingTime”.
 </p>
 
-~~~
-<script src="//js14.invoca.net/14/integration.js"></script>
+<pre><code><xmp><script src="//js14.invoca.net/14/integration.js"></script>
 <script type="text/javascript">
   var d = new Date();
   var timeStamp = d.toUTCString();
@@ -545,10 +491,7 @@ You can capture additional RingPool parameters through client-side JavaScript us
         ringPoolId : YOUR_RINGPOOL_ID,
         poolParams : { landingTime : timeStamp }
     };
-</script>
-~~~
-{: .prettyprint .theme-github}
-
+</script></xmp></code></pre>
 <br>
 
 <h3 id="display_different_numbers">
@@ -559,8 +502,7 @@ Displaying Different Numbers on Other Pages</h3>
 Typically a visitor is “cookied” at a domain level and therefore is served the same number as they visit various web-integrated pages on the same domain. Use the “cookieId” option to set a unique cookie on different pages of a website. This allows different numbers to be served to the same visitor, depending on the page they visit. This example demonstrates how to allocate a unique number for the same user on two different pages. Any page that uses cookieId: "A" displays one number, and any page that uses cookieId: "B" displays another. Note: The cookie names (e.g. A, B) can be a custom name of your choosing.
 </p>
 
-~~~
-<!-- Page 1: Cookie "A" -->
+<pre><code><xmp><!-- Page 1: Cookie "A" -->
 <script src="//js14.invoca.net/14/integration.js"></script>
 <script type="text/javascript">
   Invoca.advertiser_integration = {
@@ -580,10 +522,7 @@ Typically a visitor is “cookied” at a domain level and therefore is served t
     ringPoolId : YOUR_RINGPOOL_ID,
     cookieId: 'B'
   };
-</script>
-~~~
-{: .prettyprint .theme-github}
-
+</script></xmp></code></pre>
 <br>
 
 <h3 id="click-to-call">
@@ -595,8 +534,7 @@ When online CTC is enabled, the default behavior is for the phone number on the 
 
 Example of customizing the "Call now" button when using online CTC.
 
-~~~
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<pre><code><xmp><!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -624,10 +562,7 @@ Example of customizing the "Call now" button when using online CTC.
       } catch( e ){ }
     </script>
   </body>
-</html>
-~~~
-{: .prettyprint .theme-github}
-
+</html></xmp></code></pre>
 
 That example results in a "Click Here to Call" link in the header, and when clicked would show the online CTC form.
 
@@ -669,8 +604,7 @@ end
 
 <br>
 
-<pre><code>
-"
+<pre><code><xmp>"
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -700,8 +634,7 @@ end
     </script>
   </body>
 </html>
-"
-</pre><code>
+"</xmp></code></pre>
 
 Notice that there is only ever one installation of the Web Integration code, and the only thing that needs to be set up on the server side are the IDs of the RingPool and Campaign.
 
@@ -722,15 +655,14 @@ The following example shows how to hide the static number on a landing page, and
 
 <br>
 
-Update <code>var PHONE_SELECTOR</code> to be the selector wrapping the phone number to be replaced.<br>
-Update <code>var FADE_SPEED</code> to be the length of the fade in milliseconds.
+Update `var PHONE_SELECTOR` to be the selector wrapping the phone number to be replaced.<br>
+Update `var FADE_SPEED` to be the length of the fade in milliseconds.
 
-In the HTML, wrap your phone numbers in a span tag with the class “phone-number”. <code><span class=”phone-number”>STATIC NUMBER HERE</span></code>.
+In the HTML, wrap your phone numbers in a span tag with the class “phone-number”. `<span class=”phone-number”>STATIC NUMBER HERE</span>`.
 </p>
 
 
-~~~
-<!-- Omit http from path to ensure protocol is same as current request -->
+<pre><code><xmp><!-- Omit http from path to ensure protocol is same as current request -->
 <script src="//js11.invoca.net/11/integration.js"></script>
 <script type="text/javascript">
 
@@ -760,9 +692,7 @@ In the HTML, wrap your phone numbers in a span tag with the class “phone-numbe
 /* -- End of Invoca Custom Code -- */
 
 </script>
-<!-- End Call Tracking Code -->
-~~~
-{: .prettyprint .theme-github}
+<!-- End Call Tracking Code --></xmp></code></pre>
 
 
 <br>
